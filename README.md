@@ -1,5 +1,7 @@
+<p align="center">
+  <img width="300" height="1024" alt="FastPlotNeuron Logo Design" src="https://github.com/user-attachments/assets/8ab9206d-38ad-4bf8-aeb0-5de9dba4a962" />
+</p>
 
-<img width="1536" height="1024" alt="FastPlotNeuron Logo Design" src="https://github.com/user-attachments/assets/8ab9206d-38ad-4bf8-aeb0-5de9dba4a962" />
 
 # PlotNeuron — Neural Network Diagram Generator 🦀
 
@@ -511,4 +513,5 @@ ISC License - see the original project for details.
 
 
 **Rust acceleration additions** by the community. Built with performance in mind.
+
 
