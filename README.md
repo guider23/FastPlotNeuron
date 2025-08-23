@@ -288,11 +288,11 @@ Example benchmark output:
 
 Performance Comparison (1000 iterations):
 
-🦀 Rust: 0.0234s
+ Rust: 0.0234s
 
 Python: 0.1891s
 
-⚡ Speedup: 8.1x faster with Rust
+Speedup: 8.1x faster with Rust
 
 ```
 
@@ -512,6 +512,7 @@ ISC License - see the original project for details.
 
 
 **Rust acceleration additions** by the community. Built with performance in mind.
+
 
 
 
