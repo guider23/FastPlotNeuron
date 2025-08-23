@@ -41,7 +41,8 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 PlotNeuron Server (Rust-accelerated) running at http:
-  console.log(`🦀 Rust integration enabled for enhanced performance`);
-  console.log(`📊 Performance endpoint: http:
+  console.log(`PlotNeuron Server (Rust-accelerated) running at http:
+  console.log(`Rust integration enabled for enhanced performance`);
+  console.log(`Performance endpoint: http:
 });
+

@@ -1,13 +1,13 @@
 
 
 
-Write-Host "🚀 PlotNeuron Rust Integration Setup" -ForegroundColor Cyan
+Write-Host " PlotNeuron Rust Integration Setup" -ForegroundColor Cyan
 Write-Host "=====================================" -ForegroundColor Cyan
 
 
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Host "❌ Please run this script as Administrator" -ForegroundColor Red
+    Write-Host "Please run this script as Administrator" -ForegroundColor Red
     exit 1
 }
 
@@ -28,9 +28,9 @@ $prerequisites = @()
 
 if (Test-Command "rustc") {
     $rustVersion = rustc --version
-    Write-Host "✅ Rust found: $rustVersion" -ForegroundColor Green
+    Write-Host "⭐ Rust found: $rustVersion" -ForegroundColor Green
 } else {
-    Write-Host "❌ Rust not found. Installing..." -ForegroundColor Red
+    Write-Host "💀 Rust not found. Installing..." -ForegroundColor Red
 
     if (Test-Command "choco") {
         choco install rust -y
@@ -44,7 +44,7 @@ if (Test-Command "python") {
     $pythonVersion = python --version
     Write-Host "✅ Python found: $pythonVersion" -ForegroundColor Green
 } else {
-    Write-Host "❌ Python not found" -ForegroundColor Red
+    Write-Host "🤣 Python not found" -ForegroundColor Red
     $prerequisites += "Python 3.8+"
 }
 
@@ -52,21 +52,21 @@ if (Test-Command "node") {
     $nodeVersion = node --version
     Write-Host "✅ Node.js found: $nodeVersion" -ForegroundColor Green
 } else {
-    Write-Host "❌ Node.js not found" -ForegroundColor Red
+    Write-Host "💀 Node.js not found" -ForegroundColor Red
     $prerequisites += "Node.js"
 }
 
 if (Test-Command "pdflatex") {
     Write-Host "✅ LaTeX found" -ForegroundColor Green
 } else {
-    Write-Host "❌ LaTeX not found" -ForegroundColor Red
+    Write-Host "💀 LaTeX not found" -ForegroundColor Red
     $prerequisites += "LaTeX (MiKTeX or TeX Live)"
 }
 
 if (Test-Command "magick") {
     Write-Host "✅ ImageMagick found" -ForegroundColor Green
 } else {
-    Write-Host "❌ ImageMagick not found" -ForegroundColor Red
+    Write-Host "😊 ImageMagick not found" -ForegroundColor Red
     $prerequisites += "ImageMagick"
 }
 
@@ -82,7 +82,7 @@ if ($prerequisites.Count -gt 0) {
 Write-Host "✅ All prerequisites satisfied!" -ForegroundColor Green
 
 
-Write-Host "`n📦 Setting up Rust environment..." -ForegroundColor Yellow
+Write-Host "`n😏👍 Setting up Rust environment..." -ForegroundColor Yellow
 
 try {
 
@@ -117,7 +117,7 @@ try {
 }
 
 
-Write-Host "`n🧪 Testing installation..." -ForegroundColor Yellow
+Write-Host "`n Testing installation..." -ForegroundColor Yellow
 
 try {
 
@@ -125,7 +125,7 @@ try {
     if ($LASTEXITCODE -eq 0) {
         Write-Host "✅ Rust CLI working!" -ForegroundColor Green
     } else {
-        Write-Host "⚠️  Rust CLI test had issues, but continuing..." -ForegroundColor Yellow
+        Write-Host "🖕  Rust CLI test had issues, but continuing..." -ForegroundColor Yellow
     }
 
 
@@ -142,3 +142,4 @@ Write-Host "1. Test CLI: cargo run --bin neuron-cli validate examples/cnn_exampl
 Write-Host "2. Start server: cd Server && npm run start-rust" -ForegroundColor Gray
 Write-Host "3. Open browser: http://localhost:3000" -ForegroundColor Gray
 Write-Host "4. Run benchmarks: python Server/scripts/generate_rust.py examples/cnn_example.json --benchmark" -ForegroundColor Gray
+
