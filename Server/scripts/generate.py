@@ -94,7 +94,7 @@ def benchmark_performance(json_path):
         json.loads(content)
     python_time = time.time() - start_time
     
-    print(f"📊 Performance Comparison ({iterations} iterations):")
+    print(f"Performance Comparison ({iterations} iterations):")
     print(f"   🦀 Rust: {rust_time:.4f}s")
     print(f"   🐍 Python: {python_time:.4f}s")
     print(f"   ⚡ Speedup: {python_time/rust_time:.1f}x faster with Rust")
@@ -188,20 +188,20 @@ def main():
         print(f"📖 Reading architecture from: {json_path}")
         data = parse_json_fast(json_path)
         
-        print(f"🏗️  Generating architecture with {len(data.get('layers', []))} layers...")
+        print(f"Generating architecture with {len(data.get('layers', []))} layers...")
         arch = generate_arch_from_json(data)
         tex_name = "main.tex"
         to_generate(arch, tex_name)
     else:
-        print("❌ No JSON input provided.")
+        print("💀 No JSON input provided.")
         sys.exit(1)
 
-    print("📝 Compiling LaTeX...")
+    print("Compiling LaTeX...")
     compile_start = time.time()
     subprocess.run(["pdflatex", "main.tex"], check=True, capture_output=True)
     compile_time = time.time() - compile_start
 
-    print("🖼️  Converting to PNG...")
+    print("Converting to PNG...")
     convert_start = time.time()
     subprocess.run([
         "magick", "-density", "300", "main.pdf",
@@ -215,8 +215,8 @@ def main():
     
     total_time = time.time() - start_total
     
-    print(f"✅ Generation complete!")
-    print(f"📊 Performance Summary:")
+    print(f"⚡🪙 Generation complete!")
+    print(f"👾 Performance Summary:")
     print(f"   📝 LaTeX compilation: {compile_time:.2f}s")
     print(f"   🖼️  PNG conversion: {convert_time:.2f}s")
     print(f"   ⏱️  Total time: {total_time:.2f}s")
@@ -224,3 +224,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
