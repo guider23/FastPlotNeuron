@@ -1,0 +1,42 @@
+{
+  "name": "Simple CNN",
+  "description": "A basic convolutional neural network for image classification",
+  "layers": [
+    {
+      "type": "conv",
+      "name": "conv1",
+      "filters": 32,
+      "kernel_size": 3,
+      "stride": 1
+    },
+    {
+      "type": "pool",
+      "name": "pool1",
+      "pool_size": 2
+    },
+    {
+      "type": "conv",
+      "name": "conv2", 
+      "filters": 64,
+      "kernel_size": 3,
+      "stride": 1
+    },
+    {
+      "type": "pool",
+      "name": "pool2",
+      "pool_size": 2
+    },
+    {
+      "type": "dense",
+      "name": "fc1",
+      "units": 128,
+      "activation": "relu"
+    },
+    {
+      "type": "dense",
+      "name": "output",
+      "units": 10,
+      "activation": "softmax"
+    }
+  ]
+}

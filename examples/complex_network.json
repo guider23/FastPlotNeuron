@@ -1,0 +1,61 @@
+{
+  "name": "Complex ResNet-like Architecture",
+  "description": "A more complex network with residual connections",
+  "layers": [
+    {
+      "type": "conv",
+      "name": "conv1",
+      "filters": 64,
+      "kernel_size": 7,
+      "stride": 2
+    },
+    {
+      "type": "batchnorm",
+      "name": "bn1"
+    },
+    {
+      "type": "pool",
+      "name": "maxpool1",
+      "pool_size": 3
+    },
+    {
+      "type": "conv",
+      "name": "conv2_1",
+      "filters": 64,
+      "kernel_size": 3,
+      "stride": 1
+    },
+    {
+      "type": "conv",
+      "name": "conv2_2",
+      "filters": 64,
+      "kernel_size": 3,
+      "stride": 1
+    },
+    {
+      "type": "conv",
+      "name": "conv3_1",
+      "filters": 128,
+      "kernel_size": 3,
+      "stride": 2
+    },
+    {
+      "type": "conv",
+      "name": "conv3_2",
+      "filters": 128,
+      "kernel_size": 3,
+      "stride": 1
+    },
+    {
+      "type": "pool",
+      "name": "avgpool",
+      "pool_size": 7
+    },
+    {
+      "type": "dense",
+      "name": "fc",
+      "units": 1000,
+      "activation": "softmax"
+    }
+  ]
+}

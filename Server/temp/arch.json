@@ -1,0 +1,19 @@
+{
+  "layers": [
+    {
+      "type": "Conv",
+      "filters": 64,
+      "size": "(2,2)",
+      "position": "(0,0,0)"
+    },
+    {
+      "type": "Pool",
+      "size": "(1,1)",
+      "position": "(2,0,0)"
+    },
+    {
+      "type": "Dense",
+      "units": 128
+    }
+  ]
+}

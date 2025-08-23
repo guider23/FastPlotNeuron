@@ -1,0 +1,19 @@
+{
+  "name": "plotneuron",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build-rust": "cd .. && cargo build --release",
+    "setup": "cd .. && python setup_rust.py"
+  },
+  "keywords": ["neural-network", "visualization", "rust", "performance"],
+  "author": "",
+  "license": "ISC",
+  "description": "High-performance neural network diagram generator with Rust acceleration",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}

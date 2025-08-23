@@ -1,0 +1,1 @@
+C:\Users\sidhe\Documents\GitHub\PlotNeuron\target\release\plotneuron_rust.dll: C:\Users\sidhe\Documents\GitHub\PlotNeuron\build.rs C:\Users\sidhe\Documents\GitHub\PlotNeuron\src\layer_processor.rs C:\Users\sidhe\Documents\GitHub\PlotNeuron\src\lib.rs C:\Users\sidhe\Documents\GitHub\PlotNeuron\src\neuron_math.rs
