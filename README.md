@@ -1,5 +1,5 @@
 
-# PlotNeuron — Neural Network Diagram Generator 
+# PlotNeuron — Neural Network Diagram Generator 🦀
 
   
 
@@ -506,5 +506,6 @@ We welcome contributions! Particularly interested in:
 ISC License - see the original project for details.
 
   
+
 
 **Rust acceleration additions** by the community. Built with performance in mind.
