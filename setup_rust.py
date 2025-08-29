@@ -10,16 +10,16 @@ import platform
 
 def run_command(cmd, description):
     """Run a command and handle errors"""
-    print(f"🔄 {description}...")
+    print(f" {description}...")
     try:
         if platform.system() == "Windows":
             result = subprocess.run(cmd, shell=True, check=True, capture_output=True, text=True)
         else:
             result = subprocess.run(cmd.split(), check=True, capture_output=True, text=True)
-        print(f"✅ {description} completed successfully")
+        print(f" {description} completed successfully")
         return True
     except subprocess.CalledProcessError as e:
-        print(f"❌ {description} failed:")
+        print(f"{description} failed:")
         print(f"   Error: {e}")
         if e.stdout:
             print(f"   Stdout: {e.stdout}")
@@ -32,7 +32,7 @@ def check_rust_installation():
     try:
         result = subprocess.run(["rustc", "--version"], capture_output=True, text=True)
         if result.returncode == 0:
-            print(f"✅ Rust found: {result.stdout.strip()}")
+            print(f" Rust found: {result.stdout.strip()}")
             return True
     except FileNotFoundError:
         pass
@@ -44,10 +44,10 @@ def check_python_version():
     """Check Python version"""
     version = sys.version_info
     if version.major >= 3 and version.minor >= 8:
-        print(f"✅ Python {version.major}.{version.minor}.{version.micro} is compatible")
+        print(f"Python {version.major}.{version.minor}.{version.micro} is compatible")
         return True
     else:
-        print(f"❌ Python {version.major}.{version.minor}.{version.micro} is not supported. Need Python 3.8+")
+        print(f" Python {version.major}.{version.minor}.{version.micro} is not supported. Need Python 3.8+")
         return False
 
 def install_rust_dependencies():
@@ -59,7 +59,7 @@ def install_rust_dependencies():
     
 
     if not run_command("maturin build --release", "Building Rust extension"):
-        print("⚠️  Falling back to debug build...")
+        print(" Falling back to debug build...")
         if not run_command("maturin build", "Building Rust extension (debug)"):
             return False
     
@@ -84,18 +84,18 @@ def test_rust_integration():
     """Test if the Rust module can be imported"""
     try:
         import plotneuron_rust
-        print("✅ Rust module imported successfully")
+        print("Rust module imported successfully")
         
 
         test_json = '{"layers": [{"type": "conv", "filters": 32}]}'
         result = plotneuron_rust.parse_network_json(test_json)
-        print("✅ Rust functions working correctly")
+        print("Rust functions working correctly")
         return True
     except ImportError as e:
-        print(f"❌ Failed to import Rust module: {e}")
+        print(f"Failed to import Rust module: {e}")
         return False
     except Exception as e:
-        print(f"❌ Rust module test failed: {e}")
+        print(f"Rust module test failed: {e}")
         return False
 
 def setup_npm_dependencies():
@@ -150,10 +150,10 @@ def create_example_json():
         import json
         json.dump(example, f, indent=2)
     
-    print("✅ Created example JSON at examples/cnn_example.json")
+    print("Created example JSON at examples/cnn_example.json")
 
 def main():
-    print("🚀 Setting up PlotNeuron with Rust integration")
+    print("⭐ Setting up PlotNeuron with Rust integration")
     print("=" * 50)
     
 
@@ -183,13 +183,13 @@ def main():
     print("🎯 Setup Summary")
     
     if failed_steps:
-        print(f"❌ {len(failed_steps)} step(s) failed:")
+        print(f" {len(failed_steps)} step(s) failed:")
         for step in failed_steps:
             print(f"   - {step}")
-        print("\n⚠️  PlotNeuron may work with reduced functionality")
+        print("\nPlotNeuron may work with reduced functionality")
     else:
-        print("✅ All setup steps completed successfully!")
-        print("\n🎉 PlotNeuron with Rust acceleration is ready!")
+        print(" All setup steps completed successfully!")
+        print("\n PlotNeuron with Rust acceleration is ready!")
         
     print("\n📖 Next steps:")
     print("   1. Test with: cargo run --bin neuron-cli validate examples/cnn_example.json")
@@ -198,3 +198,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
